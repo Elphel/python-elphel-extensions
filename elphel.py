@@ -15,7 +15,7 @@ class phys_mem:
     allocated it should remain working
     '''
     def __init__(self, buf_size = 4096):
-        ctypes_alloc = ctypes.CDLL('libelphel.so').malloc_and_mlock
+        ctypes_alloc = ctypes.CDLL('libelphel.so.0').malloc_and_mlock
         ctypes_alloc.restype = ctypes.c_void_p
         ctypes_alloc.argtypes = ctypes.c_size_t,
         self.endian="<" # little, ">" for big
